@@ -84,14 +84,14 @@ I would like to enquire about Ready Mix Concrete from PVR Concrete.
 
             <div className="mt-9 flex flex-wrap gap-4">
               <a
-                href="tel:+916363336313"
+                href="tel:+918880552225"
                 className="rounded-full bg-[#C9252D] px-7 py-4 font-bold text-white transition hover:bg-red-700"
               >
                 Call Us →
               </a>
 
               <a
-                href="https://wa.me/916363336313"
+                href="https://wa.me/918880552225"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/20 bg-white/5 px-7 py-4 font-bold text-white transition hover:bg-white/10"

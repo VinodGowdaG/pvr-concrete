@@ -310,9 +310,18 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(209,40,48,0.35),transparent_45%)]" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-48 w-48 items-center justify-center rounded-full border border-white/20 bg-white/10 text-7xl font-black text-white backdrop-blur-sm">
-                  RP
-                </div>
+                
+<div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full border-2 border-white/40 shadow-xl">
+  <Image
+    src="/about/pvr-founder.png"
+    alt="R. Purushotham - Founder and Owner of PVR Concrete"
+    fill
+    priority
+    sizes="192px"
+    className="object-cover object-center scale-[1.3]"
+  />
+</div>
+
               </div>
 
               <div className="absolute bottom-8 left-8">

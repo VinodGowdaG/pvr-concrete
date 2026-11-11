@@ -40,6 +40,21 @@ const images = [
     title: "PVR Concrete Fleet",
     category: "Fleet",
   },
+  {
+    src: "/gallery/images/gallery-7.jpeg",
+    title: "Ayudha Pooja Celebration",
+    category: "PVR Team",
+  },
+  {
+    src: "/gallery/images/gallery-8.jpeg",
+    title: "At PVR Concrete",
+    category: "PVR Team", 
+  },
+  {
+    src: "/gallery/images/gallery-9.jpeg",
+    title: "Kumbalagodu Plant",
+    category: "PVR Team",
+  },
 ];
 
 const videos = [

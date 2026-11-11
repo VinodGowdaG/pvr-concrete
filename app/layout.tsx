@@ -30,6 +30,25 @@ export const metadata: Metadata = {
   creator: "PVR Concrete",
   publisher: "PVR Concrete",
 
+
+  icons: {
+    icon: [
+      {
+        url: "/pvr-favicon.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    apple: [
+      {
+        url: "/pvr-favicon.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+  },
+
+
   alternates: {
     canonical: "https://www.pvrconcrete.com",
   },

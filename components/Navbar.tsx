@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
@@ -21,8 +22,10 @@ export default function Navbar() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50">
       <nav className="mx-auto max-w-7xl px-6 py-5 lg:px-8">
-        <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#063B2A]/80 px-4 py-3 shadow-lg backdrop-blur-xl">
-          
+
+        {/* Main Navbar */}
+        <div className="flex items-center justify-between rounded-2xl border border-[#063B2A]/10 bg-[#F7F7F2]/95 px-5 py-3 shadow-lg shadow-black/10 backdrop-blur-xl">
+
           {/* Logo */}
           <Link
             href="/"
@@ -30,45 +33,45 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             <Image
-              src="/logo/pvr-concrete-logo.png"
+              src="/logo/pvr-concrete-logo1.png"
               alt="PVR Concrete"
-              width={180}
-              height={75}
+              width={220}
+              height={150}
               priority
-              className="h-auto w-[145px] object-contain sm:w-[165px]"
+              className="h-auto w-[155px] object-contain sm:w-[180px] lg:w-[195px]"
             />
           </Link>
 
           {/* Desktop Navigation */}
-<div className="hidden shrink-0 items-center gap-1 lg:flex">
-  {navItems.map((item) => (
-    <Link
-      key={item.name}
-      href={item.href}
-      className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white xl:px-4"
-    >
-      {item.name}
-    </Link>
-  ))}
-</div>
+          <div className="hidden items-center gap-1 lg:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="rounded-full px-4 py-2 text-sm font-semibold text-[#063B2A] transition-all duration-300 hover:bg-[#C9252D]/10 hover:text-[#C9252D]"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
 
-          {/* Desktop CTA */}
+          {/* Quote Button */}
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="rounded-full bg-[#C9252D] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#a91e25] hover:shadow-lg"
+              className="rounded-full bg-[#C9252D] px-6 py-3 text-sm font-bold text-white shadow-md shadow-red-900/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A91E25] hover:shadow-lg"
             >
               Get a Quote →
             </Link>
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
           <button
             type="button"
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white lg:hidden"
+            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#063B2A]/15 bg-white text-[#063B2A] lg:hidden"
           >
             <div className="space-y-1.5">
               <motion.span
@@ -77,27 +80,25 @@ export default function Navbar() {
                     ? { rotate: 45, y: 6 }
                     : { rotate: 0, y: 0 }
                 }
-                className="block h-0.5 w-5 bg-white"
+                className="block h-0.5 w-5 bg-[#063B2A]"
               />
-
               <motion.span
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block h-0.5 w-5 bg-white"
+                className="block h-0.5 w-5 bg-[#063B2A]"
               />
-
               <motion.span
                 animate={
                   menuOpen
                     ? { rotate: -45, y: -6 }
                     : { rotate: 0, y: 0 }
                 }
-                className="block h-0.5 w-5 bg-white"
+                className="block h-0.5 w-5 bg-[#063B2A]"
               />
             </div>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Dropdown */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -105,7 +106,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto", y: 0 }}
               exit={{ opacity: 0, height: 0, y: -10 }}
               transition={{ duration: 0.25 }}
-              className="mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#063B2A]/95 shadow-xl backdrop-blur-xl lg:hidden"
+              className="mt-2 overflow-hidden rounded-2xl border border-[#063B2A]/10 bg-[#F7F7F2] shadow-xl lg:hidden"
             >
               <div className="p-3">
                 {navItems.map((item, index) => (
@@ -118,7 +119,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
+                      className="block rounded-xl px-4 py-3 text-sm font-semibold text-[#063B2A] transition hover:bg-[#C9252D]/10 hover:text-[#C9252D]"
                     >
                       {item.name}
                     </Link>
@@ -128,7 +129,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 block rounded-xl bg-[#C9252D] px-4 py-3 text-center text-sm font-bold text-white"
+                  className="mt-2 block rounded-xl bg-[#C9252D] px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-[#A91E25]"
                 >
                   Get a Quote →
                 </Link>
@@ -136,6 +137,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
+
       </nav>
     </header>
   );

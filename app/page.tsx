@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HomeMediaSlider from "@/components/HomeMediaSlider";
 
 const stats = [
   {
@@ -413,6 +414,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* =====================================================
+          SLIDER / PROJECT VISUAL
+      ====================================================== */ }
+      
+        <HomeMediaSlider />
 
       {/* =====================================================
           CONSTRUCTION / PROJECT VISUAL
